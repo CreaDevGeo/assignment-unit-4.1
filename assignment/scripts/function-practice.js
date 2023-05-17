@@ -14,32 +14,29 @@ console.log('Test - should say "Hello World!"', hello());
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
-let names =  [];
-
 function helloName( name ){
   console.log('Running helloName. Enter a name.' );
-  console.log(`You entered, ${name}, for the name.`);
-  names.push( name );
-  return names;
+  return `Hello ${name}!`;
 }
 // Remember to call the function to test
-helloName( 'Georgio' );
+console.log('- TEST -helloName:', helloName( 'Georgio' ));
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
+function addNumbers( firstNumber, secondNumber ) {
   // return firstNumber + secondNumber;
-
+  console.log('Running addNumber. Enter your numbers.' );
+  const addedSum = firstNumber + secondNumber;
+  return "The sum of the two numbers you entered is:", addedSum;
 }
-
+console.log('- TEST -addNumbers:', addNumbers(20, 1));
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree(num1, num2, num3){
   console.log( 'Running multiplyThree. Enter the three numbers you\'d like to multple together.' );
   const answer = num1 * num2 * num3;
-  console.log('The answer is:', answer);
-  return answer;
+  return 'The answer is:', answer;
 }
-
+console.log('- TEST -mutiplyThree:', multiplyThree(2, 2, 2));
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
@@ -77,8 +74,7 @@ function lastArrayItem(array) {
     return console.log("The last item in this array is:", undefined);
   }
   else{
-    console.log("The last item in this array is:", array[array.length - 1]);
-  return  array[array.length - 1];
+  return  "The last item in this array is:", array[array.length - 1];
   }
 }
 console.log('- TEST -lastArrayItem:', lastArrayItem(noItemsInArray));
@@ -94,7 +90,7 @@ function findArrayValue(array, value) {
   console.log("In findArrayValue.");
   for(let i = 0; i < array.length; i ++){
     if(i === value){
-      arrayValue = array[i];
+      const arrayValue = array[i];
       console.log(`The value is:', ${arrayValue}`);
       return true;
     }
@@ -102,8 +98,7 @@ function findArrayValue(array, value) {
   console.log('There is no value in his array.');
   return false;
 }
-
-console.log('- TEST - findArrayValue:', findArrayValue(itemsInArray, 1));
+console.log('- TEST - findArrayValue:', findArrayValue(campers, 1));
 
 
 // ----------------------
@@ -120,9 +115,16 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 // 9. Function to return the sum of all numbers in an array
 arrayNumbers = [4, 8, 2, 0, 3];
 
-console.log("In arrayNumbers. Enter your array.")
-
-
+function sumAll ( array ){
+  console.log("In arrayNumbers. Enter your array.")
+  for(i = 0; i < array.length; i ++){
+    const arrayValue = array[i];
+    console.log("The array value is", arrayValue);
+    if(arrayValue === array[i]);
+    sum = arrayValue +
+    console.log("The array sum is", sum);
+  }
+}
 console.log('- TEST - findArrayValue:', sumAll(arrayNumbers));
 
 // 10. Function to return a new array of all positive (greater than zero)
