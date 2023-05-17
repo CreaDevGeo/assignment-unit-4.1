@@ -74,20 +74,37 @@ noItemsInArray = [];
 function lastArrayItem(array) {
   console.log('In lastArrayItem. Enter an array to see the last item.');
   if(array.length === 0){
-    return console.log("The last item in this array is", undefined);
+    return console.log("The last item in this array is:", undefined);
   }
-  array[array.length - 1];
-  return console.log("The last item in this array is:", array[]);
+  else{
+    console.log("The last item in this array is:", array[array.length - 1]);
+  return  array[array.length - 1];
+  }
 }
-console.log(lastArrayItem(noItemsInArray));
-console.log(lastArrayItem(itemsInArray));
+console.log('- TEST -lastArrayItem:', lastArrayItem(noItemsInArray));
+console.log('- TEST -lastArrayItem:', lastArrayItem(itemsInArray));
+
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-function find( value, array ){
-  
+let campers = ['Jill', 'Tommy', 'Noah', 'Chris'];
+
+function findArrayValue(array, value) {
+  console.log("In findArrayValue.");
+  for(let i = 0; i < array.length; i ++){
+    if(i === value){
+      arrayValue = array[i];
+      console.log(`The value is:', ${arrayValue}`);
+      return true;
+    }
+  }
+  console.log('There is no value in his array.');
+  return false;
 }
+
+console.log('- TEST - findArrayValue:', findArrayValue(itemsInArray, 1));
+
 
 // ----------------------
 // Stretch Goals
@@ -101,11 +118,12 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
-  // TODO: loop to add items
-  return sum;
-}
+arrayNumbers = [4, 8, 2, 0, 3];
+
+console.log("In arrayNumbers. Enter your array.")
+
+
+console.log('- TEST - findArrayValue:', sumAll(arrayNumbers));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
