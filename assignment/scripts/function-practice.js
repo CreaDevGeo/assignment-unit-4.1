@@ -113,25 +113,39 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-arrayNumbers = [4, 8, 2, 0, 3];
+arrayNumbers = [4, 8, 2, 0, 3, -12, 7];
 
 function sumAll ( array ){
+  sum = 0;
   console.log("In arrayNumbers. Enter your array.")
   for(i = 0; i < array.length; i ++){
-    const arrayValue = array[i];
-    console.log("The array value is", arrayValue);
-    if(arrayValue === array[i]);
-    sum = arrayValue +
-    console.log("The array sum is", sum);
+    sum += array[i];
   }
+  return sum;
 }
-console.log('- TEST - findArrayValue:', sumAll(arrayNumbers));
+console.log('- TEST - sumAll:', sumAll(arrayNumbers));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+arrayNumbersEmpty = [];
 
-
+function arrayPositiveCheck(array){
+  let positiveNumbers = [];
+  console.log("In arrayNumbers. Enter your array.");
+  for(index = 0; index < array.length; index ++){
+    if(array[index] > 0){
+      positiveNumbers = array[index].push;
+    }
+    else{
+      array = positiveNumbers;
+      return array;
+    } 
+  }
+  array = positiveNumbers;
+  return array;
+}
+console.log('- TEST - arrayPositive:', arrayPositiveCheck(arrayNumbers));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
