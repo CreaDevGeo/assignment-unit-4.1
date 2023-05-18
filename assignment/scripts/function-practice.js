@@ -135,18 +135,47 @@ function arrayPositiveCheck(array){
   console.log("In arrayNumbers. Enter your array.");
   for(index = 0; index < array.length; index ++){
     if(array[index] > 0){
-      positiveNumbers = array[index].push;
+    positiveNumbers.push(array[index]);
     }
-    else{
-      array = positiveNumbers;
-      return array;
-    } 
-  }
-  array = positiveNumbers;
-  return array;
 }
-console.log('- TEST - arrayPositive:', arrayPositiveCheck(arrayNumbers));
+return "The positive Numbers of this array are:", positiveNumbers;
+}
+console.log('- TEST - arrayPositiveCheck:', arrayPositiveCheck(arrayNumbers));
+console.log('- TEST - arrayPositiveCheck:', arrayPositiveCheck(arrayNumbersEmpty));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+// CodeWars:
+// Your task is to create a function that does four basic mathematical operations.
+// The function should take three arguments - operation(string/char), value1(number), value2(number).
+// The function should return result of numbers after applying the chosen operation.
+
+function mathOperations(value, mathOperation, value2){
+  console.log("In mathOperations. Enter the operation you want to perform.");
+  // Two values are added for the sum.
+  if(mathOperation === '+'){
+    let answer = value + value2; 
+    return `${value} + ${value2} is:`, answer;  
+  } // end addition
+  // Two values are subtracted for the difference.
+  else if(mathOperation === '-'){
+    let answer = value - value2;  
+    return `${value} - ${value2} is:`, answer;  
+  } // end subtraction
+  // Two values are multiplied for the product.
+  else if(mathOperation === '*'){
+    let answer = value * value2;  
+    return `${value} * ${value2} is:`, answer;  
+  } // end multiplaication
+  // Two values are divided for the quotient.
+  else if(mathOperation === '/'){
+    let answer = value / value2;  
+    return `The value of ${value} / ${value2} is:`, answer;  
+  } // end division
+}
+
+console.log('- TEST - mathOperations:', mathOperations(1, '+', 1));
+console.log('- TEST - mathOperations:', mathOperations(27, '-', 3));
+console.log('- TEST - mathOperations:', mathOperations(8, '*', 2));
+console.log('- TEST - mathOperations:', mathOperations(100, '/', 5));
